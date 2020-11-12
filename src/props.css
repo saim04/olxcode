@@ -1,0 +1,40 @@
+body{font-size: 14px;}
+h1,h2,h3,h4,h5,h6{margin: 0px;padding: 0px;font-weight: normal;}
+.flex{display: flex;}
+.tnone{text-decoration: none;}
+.aic{align-items: center;}
+.tc{text-align:  center;}
+.fixed{position: fixed;}
+.rel{position: relative;}
+.abs{position: absolute;}
+.sticky{position: sticky;}
+.font{font-family: 'Open Sans', sans-serif;font-weight: normal;}
+.fontl{font-family: 'Open Sans', sans-serif;font-weight: 300;}
+.font4{font-family: 'Open Sans', sans-serif;font-weight: 400;}
+.font5{font-family: 'Open Sans', sans-serif;font-weight: 500;}
+.font6{font-family: 'Open Sans', sans-serif;font-weight: 600;}
+.fontb{font-family: 'Open Sans', sans-serif;font-weight: 700;}
+.b{font-weight: bold;}
+.s12{font-size: 12px;}
+.s13{font-size: 13px;}
+.s14{font-size: 14px;}
+.s15{font-size: 15px;}
+.s16{font-size: 16px;}
+.s18{font-size: 18px;}
+.s20{font-size: 20px;}
+.s22{font-size: 22px;}
+.s24{font-size: 24px;}
+.s30{font-size: 30px;}
+.noul{text-decoration: none;}
+.noulh:hover{text-decoration: underline;}
+.list{list-style: none;}
+.grid{display: inline-grid;}
+.ifl{display: inline-flex;}
+/*<div className="input-group search_item">
+			          <input type="text" className="form-control" placeholder="Find Cars, Mobile Phone and more..." aria-label="Text input with dropdown button" />
+			          <div className="input-group-append">
+			            <button className="btn btn-outline" type="button" aria-haspopup="true" aria-expanded="false">
+			            	<div className="fas fa-search s20"/>
+			            </button>           
+			          </div>
+			    	</div>*/

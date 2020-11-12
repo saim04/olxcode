@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import Home from './Home'
+import Post from './Post'
+import Login from './Login'
+import Item from './Item'
+import fire from './fire'
+import {BrowserRouter as Router,Route} from 'react-router-dom';
+class App extends React.Component {
+  constructor(props) {   
+    super(props);  
+    this.state = {Adslist : []}
+    }   
+  componentDidMount() {    
+      fire.database().ref("Ads").on("value", snapshot => {
+        let Adlist = [];
+        snapshot.forEach(snap => {
+            Adlist.push(snap.val());
+        });
+        this.setState({Adslist:Adlist});
+      });   
+ } 
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    	<Route exact path="/" component={Home} ><Home data={this.state.Adslist}/></Route>
+      <Route  path="/post" component={Post}></Route> 
+      <Route  path="/login" component={Login}></Route> 
+      <Route  path="/item/:title"><Item data={this.state.Adslist} /></Route> 
+    </Router>
   );
+}
 }
 
 export default App;

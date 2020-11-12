@@ -1,38 +1,344 @@
-.App {
+body {
+  overflow-x: hidden;
+}
+
+/*Header starts*/
+
+.header {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 9;
+  height: 70px;
+  background-color: #f7f8f8;
+  box-shadow: 0px 2px 2px #dadada;
+  padding: 0px 4%;
+}
+
+.header .logo {
+  margin-right: 20px;
+}
+
+.header .logo img {
+  height: 30px;
+  width: 55px;
+}
+
+.locat {
+  background-color: white;
+  border: 2px solid #002f34;
+  border-radius: 4px;
+  margin-right: 15px;
+  padding: 1px;
+}
+
+.locat input {
+  border: 0px !important;
+  box-shadow: none !important;
+}
+
+.form-control {
+  box-shadow: none !important;
+}
+
+.locat .fas {
+  padding: 5px;
+}
+
+.input-group-append .btn-outline {
+  background-color: #002f34 !important;
+  color: white !important;
+}
+
+.search_item {
+  border: 2px solid #002f34;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.search_item input {
+  border: 0px !important;
+}
+
+.search_item .fas {
+  background-color: #002f34;
+  color: white;
+  padding: 10px;
+}
+
+.actions {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex: 1 1;
+}
+
+.header .actions .login {
+  color: black;
+  border-bottom: 2px solid black;
+  text-decoration: none;
+}
+
+.header .actions a:hover {
+  border-bottom: none;
+}
+
+.header .actions .btn {
+  outline: none !important;
+}
+
+.card-btn {
+  outline: none !important;
+}
+
+.actions .sell {
+  padding: 8px 20px;
+  color: #002f34;
+  border: 3px solid #23e5db;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0px 3px 5px #adadad;
+  display: flex !important;
+}
+
+.card-img-top {
+  margin: auto !important;
+  display: block !important;
+}
+
+.a {
+  text-decoration: none !important;
+}
+
+.navbar {
+  left: 0px;
+  right: 0px;
+  z-index: 8;
+  height: 40px;
+  box-shadow: 0px 2px 2px #adadad;
+}
+
+.navbar .categ {
+  padding: 8px 20px;
+  color: #002f34;
+  background: transparent;
+  display: flex !important;
+}
+
+.navbar .nav-link {
+  color: #002f34 !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}
+
+.navbar .nav-link:hover {
+  color: #009999 !important;
+}
+
+.banner {
+  background-image: url(https://statics.olx.com.pk/external/base/img/hero_bg_pk.jpg);
+  height: 252px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.fa-arrow-left {
+  border: none;
+  background: transparent;
+}
+
+.form {
+  border: 1px solid rgba(0, 47, 52, .2);
+  border-radius: 4px;
+}
+
+.submit {
+  background-color: #002f34 !important;
+  border: none !important;
+}
+
+.head h4 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.MainDiv {
+  display: flex;
+}
+
+.MainDiv .card {
+  border: 1px solid rgba(0, 47, 52, .2) !important;
+  border-radius: 3px !important;
+  color: #002f34 !important;
+  text-align: left !important;
+}
+
+.MainDiv img {
+  height: 200px;
+}
+
+/*Header ends*/
+
+/*Footer starts*/
+
+.ad_sec {
+  background-color: #f7f8f8;
+  color: #002f34;
+  border-bottom: 1px solid #bcc8c9;
+}
+
+.ad_sec .main_div {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.ad_sec .main_div div {
+  flex: 2 1;
+}
+
+.phone_ad {
+  background-color: #f7f8f8 !important;
+}
+
+.store_sec div {
+  border-left: 2px solid #c6d0d1;
+  padding: 20px;
+}
+
+.store_sec img {
+  height: 40px;
+  width: 130px;
+}
+
+.footer_linked {
+  background-color: #ebeeef !important;
+  padding: 40px !important;
+  margin-bottom: 0px !important
+}
+
+.grid a {
+  text-decoration: none !important;
+  color: rgba(0, 47, 52, .64);
+}
+
+.grid a:hover {
+  color: #002f34;
+}
+
+.div {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.div div {
+  flex: 1 1;
+}
+
+.ifl a {
+  text-decoration: none !important;
+  color: rgba(0, 47, 52, .64);
+  border: 2px solid rgba(0, 47, 52, .64);
+  border-radius: 15px;
+  margin-right: 10px;
+}
+
+.fa-facebook-f {
+  width: 25px !important;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fa-play {
+  width: 25px !important;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ifl a:hover {
+  color: rgba(0, 47, 52, .64);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.store_img {
+  display: inline-flex;
+}
+
+.store_img img {
+  margin-top: 15px;
+  margin-right: 10px;
+  height: 25px;
+  width: 80px;
+}
+
+.copyright {
+  background-color: #002f34 !important;
+  padding: 5px !important;
+  color: white !important;
+  margin-bottom: 0px !important;
+}
+
+.cpyright_div div {
+  margin-top: 10px;
+}
+
+.cpyright_div div a {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cpyright_div div a:hover {
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+span {
+  margin-right: 2px;
+}
+
+/*Footer ends*/
+
+@media (max-width: 992px) {
+  .navbar {
+    height: 60px;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .input-group {
+    display: none;
   }
 }
+
+@media (max-width: 700px) {
+  .store_sec div {
+    border-left: 0px;
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .store_sec div,
+  .try_olx div {
+    margin-left: 50px;
+  }
+
+  .store_sec div,
+  .try_olx div {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sell {
+    padding: 10px !important;
+    height: 30px;
+  }
+}
+
+@media (max-width:500px) {
+  .main_div .phone img {
+    width: 300px;
+  }
+}
+
+/* 
+ import Ads from './Ads' */
