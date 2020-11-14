@@ -1,31 +1,15 @@
-import React from 'react'
+import React from 'react';
 import {Link} from 'react-router-dom'
-import './App.css';
-import App from './App';
-import fire from './fire'; 
-import firebase from "firebase";
-import Ads from './Ads';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
-class Home extends React.Component {
-	state={isSignedIn:false}
-	click =(e)=>{
-		if (e =true){
-			this.setState({isSignedIn:true})
-		}else{
-			this.setState({isSignedIn:false})
-		}
-	}
- render(){      		
-  return (
-    <div className="App">
-     			<div className="header flex aic">
-					
+class Cars extends React.Component{
+    render(){
+        return(
+            <> 
+            <div className="header flex aic">
 					<Link to="/">
 						<div className="logo">
 							<img src="https://www.romaniajournal.ro/wp-content/uploads/2020/04/OLX_Rebranding.png" />
 						</div>
 					</Link>
-					
 					<div className="locat flex aic">
 					<div className="fas fa-search s20" />				
 					<form className="form-inline my-0">
@@ -41,9 +25,9 @@ class Home extends React.Component {
   					</div>	  				
 		  				<div className="actions flex aic">
 							<div>
-							<Link onClick={this.click} to="/login" id="a" className="a fontb s15 login">
-							Login
-							</Link> 
+							<Link to="/login" className="a">
+							<a href="/login" className="fontb s15 login">Login</a>
+							</Link>
 							</div>
 							<div>	
 								<Link to="/login" className="a">
@@ -68,7 +52,7 @@ class Home extends React.Component {
 			        </button>								
 		        	<div className="collapse navbar-collapse" id="navbarNav">
 		          		<ul className="navbar-nav">
-		            		<li className="nav-item">
+						  <li className="nav-item">
 		            			<Link to="/mobilephones" className="nav-link">Mobile Phones</Link>
 		            		</li>
 		            		<li className="nav-item">
@@ -93,42 +77,45 @@ class Home extends React.Component {
 		       		</div>
 	      		</nav>
 	      	</div>
-	      	<div className="banner">
+ 			<div className="container m-4">
+	      		<h4><Link to="/" style={{textDecoration:"none",color:"#002f34",fontWeight:"400"}}>Home </Link> /
+                <Link to="/cars" style={{textDecoration:"none",color:"#002f34",fontWeight:"400"}}> Cars</Link></h4>
 	      	</div>
-			  <div>
-				<Ads data={this.props.data} />				
-			</div>    	
-              <div className="mt-4  ad_sec container-fluid aic">
-				<div className="flex main_div aic">
-				<div className="phone">
-					<img src="https://statics.olx.com.pk/external/base/img/phone-app.webp" />
-				</div>
-				<div className="try_olx">
-               <div>
-					<h2 className="fontb">
-						TRY THE OLX APP
-					</h2>
-					<p className="font5 s16">
-						Buy, sell and find just about anything using <br/>the app on your mobile.
-					</p>
-               </div>
-				</div>
-				 <div className="store_sec">
-				 	<div>
-				 	<h2 className="fontb s14">
-				 		GET YOUR APP TODAY
-				 	</h2>
-				 	<a href="#">
-				 		<img src="https://statics.olx.com.pk/external/base/img/appstore_2x.webp"/>
-				 	</a>
-				 	<a href="#">
-				 		<img className="ml-lg-2" src="https://statics.olx.com.pk/external/base/img/playstore_2x.webp"/>
-				 	</a>
-				 	</div>
-				 </div>
-				 </div>
-			</div>
-			<div className="jumbotron jumbotron-fluid footer_linked">
+	      	<div className="MainDiv m-2 container row m-auto">     
+            	{this.props.data.map((card,index)=>(
+                    card.Category==="Cars"?
+                    <div className="m-auto ml-3  ">
+                <Link to={`/item/${card.itemname}`} style={{textDecoration:"none"}}>
+                    <div key={index} className="card  mt-2" style={{width: '18rem'}}>
+                     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <img className="d-block w-100" src={card.imgurl1} alt="First slide" />
+                                </div>
+                                <div className="carousel-item">
+                                    <img className="d-block w-100" src={card.imgurl2} alt="Second slide" />
+                                </div>                            
+                            </div>
+                            <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true" />
+                            <span className="sr-only">Previous</span>
+                            </a>
+                            <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true" />
+                            <span className="sr-only">Next</span>
+                            </a>
+                        </div>
+                    <div className="card-body">
+                    <h5 className="card-title fontb">Rs {card.price}</h5>
+                    <h5 className="card-title s16">{card.itemname}</h5>
+                    </div>  
+                    </div>
+                    </Link>
+                    </div> 
+                    : ""
+                ))}	
+    		</div>
+            <div className="jumbotron jumbotron-fluid footer_linked mt-5">
   				<div className="div container-fluid flex">
    				 	<div>
    				 		<h2 className="fontb s14">POPULAR CATEGORIES</h2>
@@ -201,8 +188,9 @@ class Home extends React.Component {
    				 	</div>		
   				</div>
 			</div>
-    </div>
-  );
+    	</>
+    )
+    }
 }
-}
-export default Home;
+
+export default Cars;

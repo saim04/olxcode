@@ -176,6 +176,21 @@ body {
   text-align: left !important;
 }
 
+.loadmore {
+  margin: 40px auto;
+  display: table;
+  border: 0px;
+  background: #fff;
+  color: #002f34;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 0px 3px #002f34;
+}
+
+.loadmore:hover {
+  box-shadow: inset 0px 0px 0px 5px #002f34;
+}
+
 .MainDiv img {
   height: 200px;
 }
@@ -340,5 +355,26 @@ span {
   }
 }
 
-/* 
- import Ads from './Ads' */
+/* Items css */
+.categ h5 {
+  color: #002f34;
+  font-weight: 400;
+}
+
+.categ a:hover {
+  text-decoration: none;
+}
+
+
+.main-slide {
+  width: 60% !important;
+}
+
+.itemdesc {
+  width: 40% !important;
+}
+
+.main_slide img {
+  width: 500px;
+  height: 500px;
+}
